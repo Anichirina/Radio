@@ -7,24 +7,9 @@ public class Radio {
     private int minChannel = 0;
     private int currentVolume;
     private int currentChannel;
-    private boolean nextChannel;
-    private  boolean nextVolume;
 
-    public boolean isNextChannel() {
-        return nextChannel;
-    }
 
-    public void setNextChannel(boolean nextChannel) {
-        this.nextChannel = nextChannel;
-    }
 
-    public boolean isNextVolume() {
-        return nextVolume;
-    }
-
-    public void setNextVolume(boolean nextVolume) {
-        this.nextVolume = nextVolume;
-    }
 
     public int getMaxVolume() {
         return maxVolume;
@@ -77,14 +62,7 @@ public class Radio {
             this.currentVolume = minVolume;
             return;
         }
-        if (nextVolume == true) {
-            currentVolume++;
-            return;
-        }
-        else {
-            currentVolume--;
-            return;
-        }
+
         }
 
     public int getCurrentChannel() {
@@ -115,14 +93,24 @@ public class Radio {
             this.currentChannel = minChannel;
             return;
         }
-        if (nextChannel == true) {
-            currentChannel++;
-            return;
-        }
-        else {
-            currentChannel--;
-            return;
-        }
-    }
 
+    }
+    public int prewChannel(){
+        if(currentChannel==maxChannel);
+        return currentChannel--;
+    }
+    public int nextChannel(){
+        if(currentChannel==minChannel);
+        return currentChannel++;
+    }
+    public int prewVolume(){
+        if(currentVolume==maxVolume);
+        return currentVolume--;
+    }
+    public int nextVolume(){
+        if(currentVolume==minVolume);
+        return currentVolume++;
+    }
 }
+
+

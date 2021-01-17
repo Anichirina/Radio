@@ -74,9 +74,8 @@ class RadioTest {
     void nextCurrentChannel() {
         Radio radio =new Radio();
         radio.setCurrentChannel(5);
-        radio.setNextChannel(true);
-        radio.switcCurrentChannel();
-        assertEquals(6,radio.getCurrentChannel());
+        radio.nextChannel();
+        assertEquals(6,radio.nextChannel());
     }
 
 
@@ -84,26 +83,23 @@ class RadioTest {
     void nextCurrentVolume() {
         Radio radio =new Radio();
         radio.setCurrentVolume(5);
-        radio.setNextVolume(true);
-        radio.switchCurrentVolume();
-        assertEquals(6,radio.getCurrentVolume());
+        radio.nextVolume();
+        assertEquals(6,radio.nextVolume());
     }
 
     @Test
     void prewCurrentChannel() {
         Radio radio =new Radio();
         radio.setCurrentChannel(5);
-        radio.setNextChannel(false);
-        radio.switcCurrentChannel();
-        assertEquals(4,radio.getCurrentChannel());
+        radio.prewChannel();
+        assertEquals(4,radio.prewChannel());
     }
     @Test
     void prewCurrentVolume() {
         Radio radio =new Radio();
         radio.setCurrentVolume(5);
-        radio.setNextVolume(false);
-        radio.switchCurrentVolume();
-        assertEquals(4,radio.getCurrentVolume());
+        radio.prewVolume();
+        assertEquals(4,radio.prewVolume());
     }
 
     @Test
