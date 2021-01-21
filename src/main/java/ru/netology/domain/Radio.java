@@ -8,9 +8,6 @@ public class Radio {
     private int currentVolume;
     private int currentChannel;
 
-
-
-
     public int getMaxVolume() {
         return maxVolume;
     }
@@ -47,13 +44,9 @@ public class Radio {
         return currentVolume;
     }
 
+
+    //переключение звука граничные значение
     public void setCurrentVolume(int currentVolume) {
-
-             this.currentVolume = currentVolume;
-    }
-
-
-    public void switchCurrentVolume() {
         if (currentVolume >= maxVolume) {
             this.currentVolume = maxVolume;
             return;
@@ -62,24 +55,18 @@ public class Radio {
             this.currentVolume = minVolume;
             return;
         }
-
-        }
+        this.currentVolume = currentVolume;
+    }
 
     public int getCurrentChannel() {
         return currentChannel;
     }
 
-
+    //переключение каналов граничные значения
     public void setCurrentChannel(int currentChannel) {
-
-             this.currentChannel = currentChannel;
-    }
-
-    public void switcCurrentChannel() {
         if (currentChannel > maxChannel) {
             this.currentChannel = minChannel;
             return;
-
         }
         if (currentChannel < minChannel) {
             this.currentChannel = maxChannel;
@@ -93,24 +80,60 @@ public class Radio {
             this.currentChannel = minChannel;
             return;
         }
+        this.currentChannel = currentChannel;
+    }
 
+    //переключение каналов вниз
+    public void prewChannel() {
+        if (currentChannel <= minChannel) {
+            this.currentChannel = maxChannel;
+            return;
+        }
+        if (currentChannel == maxChannel) {
+            return;
+        }
+        currentChannel--;
     }
-    public int prewChannel(){
-        if(currentChannel==maxChannel);
-        return currentChannel--;
+
+
+    //переключение каналов вверх
+    public void nextChannel() {
+        if (currentChannel >= maxChannel) {
+            this.currentChannel = minChannel;
+            return;
+        }
+        if (currentChannel == minChannel) {
+            return;
+        }
+        {
+            currentChannel++;
+        }
     }
-    public int nextChannel(){
-        if(currentChannel==minChannel);
-        return currentChannel++;
+
+    //переключения звуков вниз
+    public void prewVolume() {
+        if (currentVolume <= minVolume) {
+            this.currentVolume = minVolume;
+            return;
+        }
+        currentVolume--;
     }
-    public int prewVolume(){
-        if(currentVolume==maxVolume);
-        return currentVolume--;
+
+    //переключение звуков вверх
+    public void nextVolume() {
+        if (currentVolume >= maxVolume) {
+            this.currentVolume = maxVolume;
+            return;
+        }
+        if (currentVolume <= minVolume) {
+            this.currentVolume=minVolume;
+            return;
+
+        }
+        currentVolume++;
     }
-    public int nextVolume(){
-        if(currentVolume==minVolume);
-        return currentVolume++;
-    }
+
 }
+
 
 

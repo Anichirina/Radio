@@ -50,9 +50,9 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
-                </execution>
+                    </execution>
                 </executions>
-                    <configuration>
+                <configuration>
                     <rules>
                         <rule>
                             <limits>
