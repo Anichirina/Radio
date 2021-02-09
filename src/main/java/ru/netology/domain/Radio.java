@@ -85,11 +85,12 @@ public class Radio {
 
     //переключение каналов вниз
     public void prewChannel() {
-        if (currentChannel <= minChannel) {
+        if (currentChannel < minChannel) {
             this.currentChannel = maxChannel;
             return;
         }
-        if (currentChannel == maxChannel) {
+        if (currentChannel > maxChannel) {
+            this.currentChannel = minChannel;
             return;
         }
         currentChannel--;
@@ -98,22 +99,28 @@ public class Radio {
 
     //переключение каналов вверх
     public void nextChannel() {
-        if (currentChannel >= maxChannel) {
+
+        if (currentChannel > maxChannel) {
             this.currentChannel = minChannel;
             return;
         }
-        if (currentChannel == minChannel) {
+        if (currentChannel < minChannel) {
+            this.currentChannel = maxChannel;
             return;
         }
-        {
-            currentChannel++;
-        }
+
+        currentChannel++;
+
     }
 
     //переключения звуков вниз
     public void prewVolume() {
-        if (currentVolume <= minVolume) {
+        if (currentVolume < minVolume) {
             this.currentVolume = minVolume;
+            return;
+        }
+        if (currentVolume > maxVolume) {
+            this.currentVolume = maxVolume;
             return;
         }
         currentVolume--;
@@ -121,12 +128,12 @@ public class Radio {
 
     //переключение звуков вверх
     public void nextVolume() {
-        if (currentVolume >= maxVolume) {
+        if (currentVolume > maxVolume) {
             this.currentVolume = maxVolume;
             return;
         }
-        if (currentVolume <= minVolume) {
-            this.currentVolume=minVolume;
+        if (currentVolume < minVolume) {
+            this.currentVolume = minVolume;
             return;
 
         }

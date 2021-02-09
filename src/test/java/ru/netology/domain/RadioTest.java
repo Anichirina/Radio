@@ -183,4 +183,28 @@ class RadioTest {
         assertEquals(0, radio.getMinChannel());
 
     }
+    @Test
+    void PrewWithMaxToEarlyChannel() {
+        Radio radio = new Radio();
+        radio.setCurrentChannel(9);
+        radio.prewChannel();
+        assertEquals(8, radio.getCurrentChannel());
+
+    }
+    @Test
+    void PrewWithMinToNextChannel() {
+        Radio radio = new Radio();
+        radio.setCurrentChannel(0);
+        radio.nextChannel();
+        assertEquals(1, radio.getCurrentChannel());
+
+    }
+    @Test
+    void PrewWithMinToNextVolume() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(0);
+        radio.nextChannel();
+        assertEquals(1, radio.getCurrentChannel());
+
+    }
 }
