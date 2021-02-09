@@ -183,6 +183,7 @@ class RadioTest {
         assertEquals(0, radio.getMinChannel());
 
     }
+    //ломает тест
     @Test
     void PrewWithMaxToEarlyChannel() {
         Radio radio = new Radio();
@@ -191,6 +192,7 @@ class RadioTest {
         assertEquals(8, radio.getCurrentChannel());
 
     }
+    //ломает тест
     @Test
     void PrewWithMinToNextChannel() {
         Radio radio = new Radio();
@@ -199,12 +201,13 @@ class RadioTest {
         assertEquals(1, radio.getCurrentChannel());
 
     }
+    //ломает тест
     @Test
     void PrewWithMinToNextVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(0);
-        radio.nextChannel();
-        assertEquals(1, radio.getCurrentChannel());
+        radio.nextVolume();
+        assertEquals(1, radio.getCurrentVolume());
 
     }
 }
