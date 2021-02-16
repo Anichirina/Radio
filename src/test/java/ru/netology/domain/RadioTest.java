@@ -76,7 +76,7 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentChannel(11);
         radio.nextChannel();
-        assertEquals(0, radio.getCurrentChannel());
+        assertEquals(1, radio.getCurrentChannel());
     }
 
     @Test
@@ -93,7 +93,6 @@ class RadioTest {
         radio.nextChannel();
         assertEquals(1, radio.getCurrentChannel());
     }
-
     @Test
     void nextCurrentVolume() {
         Radio radio = new Radio();
