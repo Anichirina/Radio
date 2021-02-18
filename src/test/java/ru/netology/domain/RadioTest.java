@@ -84,7 +84,7 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentChannel(9);
         radio.nextChannel();
-        assertEquals(9, radio.getCurrentChannel());
+        assertEquals(0, radio.getCurrentChannel());
     }
     @Test
     void nextMinCurrentChannel() {
@@ -138,17 +138,10 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentChannel(0);
         radio.prewChannel();
-        assertEquals(0, radio.getCurrentChannel());
+        assertEquals(9, radio.getCurrentChannel());
 
     }
-    @Test
-    void prewCurrentUpChannel() {
-        Radio radio = new Radio();
-        radio.setCurrentChannel(15);
-        radio.prewChannel();
-        assertEquals(0, radio.getCurrentChannel());
 
-    }
     @Test
     void prewCurrentMaxChannel() {
         Radio radio = new Radio();
@@ -179,20 +172,8 @@ class RadioTest {
         radio.prewVolume();
         assertEquals(6, radio.getCurrentVolume());
     }
-    @Test
-    void prewDownCurrentVolume() {
-        Radio radio = new Radio();
-        radio.setCurrentVolume(-3);
-        radio.prewVolume();
-        assertEquals(0, radio.getCurrentVolume());
-    }
-    @Test
-    void prewUpCurrentVolume() {
-        Radio radio = new Radio();
-        radio.setCurrentVolume(13);
-        radio.prewVolume();
-        assertEquals(9, radio.getCurrentVolume());
-    }
+
+
     @Test
     void setMaxVolume() {
         Radio radio = new Radio();
